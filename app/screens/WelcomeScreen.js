@@ -6,6 +6,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  TextInput,
   View,
 } from "react-native";
 
@@ -25,11 +26,18 @@ const WelcomeScreen = ({ navigation }) => {
         }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
-            <Button
-              title="Close"
-              onPress={() => setModalVisible(!modalVisible)}
-            />
+            <Text style={{ fontWeight: "bold" }}>Sign In</Text>
+            <View style={{ padding: 10, gap: 10 }}>
+              <TextInput placeholder="Email" style={{ padding: 5 }} />
+              <TextInput placeholder="Password" style={{ padding: 5 }} />
+            </View>
+            <View style={{ flexDirection: "row", gap: 10 }}>
+              <Button title="Login" />
+              <Button
+                title="Close"
+                onPress={() => setModalVisible(!modalVisible)}
+              />
+            </View>
           </View>
         </View>
       </Modal>
